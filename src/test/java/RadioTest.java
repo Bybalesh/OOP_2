@@ -87,6 +87,14 @@ public class RadioTest {
         int actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
+    @Test//установка выше 100
+    public void setVolumeTestFl() {
+        Radio radio = new Radio();
+        radio.setVolume(135);
+        int expected = 0;
+        int actual = radio.getVolume();
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test//увеличение на 1
     public void plusVolumeTest() {
