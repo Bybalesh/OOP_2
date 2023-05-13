@@ -5,7 +5,7 @@ import ru.netology.OOP2.Radio;
 
 public class RadioTest {
 
-    @Test
+    @Test //уст. номера радио
     public void setRadioStationTest() {
         Radio radio = new Radio();
         radio.setRadioStation(1);
@@ -14,16 +14,23 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//установка выше 9
     public void setRadioStationWr() {
         Radio radio = new Radio();
         radio.setRadioStation(12);
         int expexted = 0;
         int actual = radio.getRadioStation();
         Assertions.assertEquals(expexted, actual);
+    } @Test//установка ниже 0
+    public void setRadioStationFl() {
+        Radio radio = new Radio();
+        radio.setRadioStation(-2);
+        int expexted = 0;
+        int actual = radio.getRadioStation();
+        Assertions.assertEquals(expexted, actual);
     }
 
-    @Test
+    @Test//перекл. с 9 вперед
     public void nextRadioStation() {
         Radio radio = new Radio();
         radio.setRadioStation(9);
@@ -33,7 +40,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//след. радио
     public void nextRadioStationOnes() {
         Radio radio = new Radio();
         radio.setRadioStation(2);
@@ -43,7 +50,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//переключ. с 0 назад
     public void prevRadioStation() {
         Radio radio = new Radio();
         radio.setRadioStation(0);
@@ -53,7 +60,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//предыдущ. радио
     public void prevRadioStationOnes() {
         Radio radio = new Radio();
         radio.setRadioStation(8);
@@ -63,7 +70,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//установ. любой ур-нь громкости
     public void setVolumeTest() {
         Radio radio = new Radio();
         radio.setVolume(73);
@@ -72,7 +79,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//установка ниже 0
     public void setVolumeTestWr() {
         Radio radio = new Radio();
         radio.setVolume(-2);
@@ -81,7 +88,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//увеличение на 1
     public void plusVolumeTest() {
         Radio radio = new Radio();
         radio.setVolume(29);
@@ -91,7 +98,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//выше 100 нельзя
     public void plusVolumeTestOnes() {
         Radio radio = new Radio();
         radio.setVolume(100);
@@ -101,7 +108,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//уменьшение на 1
     public void minusVolumeTest() {
         Radio radio = new Radio();
         radio.setVolume(29);
@@ -111,7 +118,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test//ниже 0 нельзя
     public void minusVolumeTestOnes() {
         Radio radio = new Radio();
         radio.setVolume(0);
